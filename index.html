@@ -3,9 +3,189 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body>
-    <script type="module" src="./index.js"></script>
+  <body class="container my-5">
+    <div class="row mb-4">
+      <div class="col-12 text-end">
+        <button type="submit" class="btn btn-primary" id="menu-reg">
+          Registruotis
+        </button>
+        <button type="submit" class="btn btn-primary" id="menu-log">
+          Prisijungti
+        </button>
+        <button type="submit" class="btn btn-primary" id="signout-button">
+          Atsijungti
+        </button>
+      </div>
+    </div>
+    <div class="row g-5">
+      <!-- Registracijos forma -->
+      <div class="col-12 col-md-6" id="reg-container">
+        <h2>Registracija</h2>
+        <form class="registration-form">
+          <div class="mb-3">
+            <label for="register-email" class="form-label">El.paštas</label>
+            <input
+              type="text"
+              class="form-control"
+              id="register-email"
+              aria-describedby="register-emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="register-password" class="form-label"
+              >Slaptažodis</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="register-password"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary w-100"
+            id="register-button"
+          >
+            Registruotis
+          </button>
+        </form>
+      </div>
+
+      <!-- Prisijungimo forma -->
+      <div class="col-12 col-md-6" id="log-container">
+        <h2>Prisijungimas</h2>
+        <form class="login-form">
+          <div class="mb-3">
+            <label for="login-email" class="form-label">El.paštas</label>
+            <input
+              type="email"
+              class="form-control"
+              id="login-email"
+              aria-describedby="login-emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="login-password" class="form-label">Slaptažodis</label>
+            <input type="password" class="form-control" id="login-password" />
+          </div>
+          <button type="submit" class="btn btn-primary w-100" id="login-button">
+            Prisijungti
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12">
+        <div id="info"></div>
+      </div>
+    </div>
+
+    <!-- Skelbimo forma -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div id="ad-form-container">
+          <h2>Sukurti skelbima</h2>
+          <form id="ad-form">
+            <div class="mb-3">
+              <label for="ad-title" class="form-label">Pavadinimas</label>
+              <input type="text" class="form-control" id="ad-title" required />
+            </div>
+            <div class="mb-3">
+              <label for="ad-category" class="form-label">Kategorija</label>
+              <input
+                type="text"
+                class="form-control"
+                id="ad-category"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="ad-description" class="form-label">Aprasymas</label>
+              <textarea
+                class="form-control"
+                id="ad-description"
+                required
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="ad-price" class="form-label">Kaina</label>
+              <input
+                type="number"
+                class="form-control"
+                id="ad-price"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="ad-image" class="form-label"
+                >Paveikslelio URL'as</label
+              >
+              <input type="text" class="form-control" id="ad-image" />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              id="create-ad-button"
+            >
+              Sukurti Skelbima
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Komentarai -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div id="comment-section">
+          <h3>Komentarai</h3>
+          <form id="comment-form">
+            <textarea
+              class="form-control"
+              id="comment-text"
+              placeholder="Pridekite komentara..."
+              required
+            ></textarea>
+            <button type="submit" class="btn btn-primary mt-2">
+              Sukurti Komentara
+            </button>
+          </form>
+          <div id="comments-list"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Favoritai -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div id="favorites-section">
+          <h3>Favoritai</h3>
+          <div id="favorites-list"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Peieska -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div id="search-bar">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Ieskoti skelbima..."
+            class="form-control"
+          />
+          <button id="search-button" class="btn btn-primary mt-2">
+            Paieska
+          </button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
